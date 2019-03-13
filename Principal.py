@@ -1,8 +1,7 @@
 import requests
 
 NomeLista = []
-NomeLista +=['Https://google.com']
-for i in Lista: 
+NomeLista +=['https://www.google.com']
+for i in NomeLista:
   response = requests.get(i).text
   print(response)
-  
