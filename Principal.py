@@ -11,9 +11,20 @@ while len(lsSites) > 0:
   for i in temp:
     lineLink = i.split("\"")
     if len(lineLink) > 1:
-      if "http" in lineLink[1] and not(lineLink[1] in lsHistory):
+      if "http" in lineLink[1] and not(lineLink[1] in lsHistory):     
+      arquivo = open('lsHistory.txt','a')
+      arquivo.write(lineLink[1])
+      arquivo.close()
         lsSites += [lineLink[1]]
         lsHistory += [lineLink[1]]
         print(lineLink[1])
 
 print(lsSites)
+
+dados = {}
+with open('tests.txt', 'r') as f:
+    for line in f:
+        params = [i.strip() for i in line.split('  ') if i.strip() != '']
+        if not params:
+            continue
+              
